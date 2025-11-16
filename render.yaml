@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: telegram-finance-bot
+    runtime: python
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python telegram_finance_bot_render.py
+    envVars:
+      - key: TELEGRAM_TOKEN
+        fromEnvVar: TELEGRAM_TOKEN
+      - key: GOOGLE_CREDENTIALS
+        fromEnvVar: GOOGLE_CREDENTIALS
+    pythonVersion: 3.10
